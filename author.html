@@ -9,10 +9,10 @@
 
 <form>
     <label for="hiddenAuthor">The hidden Author Name</label>
-    <input type ="password" id="hiddenAuthor" name="author_name" min=10 max=50 step=2 value="Dickens" disabled> <br>
+    <input type ="password" id="hiddenAuthor" name="author_name" min=10 max=50 step=2 value="Dickens" disabled> <br> <br>
 
     <label for="guessAuthor">Guess the Author </label>
-    <input type ="text" id="guessAuthor" name="guessAuthor" autofocus> <br>
+    <input type ="text" id="guessAuthor" name="guessAuthor" autofocus> <br> <br>
 
     <input type="button" onclick="checkAuthor()" value="Check the guess">
 </form>
@@ -36,10 +36,31 @@ function checkAuthor (){
         } else {
             oops++
             alert('Sorry')
-            out.innerHTML="Results: Good-"+good+", Oops-"+oops
+            out.innerHTML="Results: Good-"+ good+", Oops-"+oops
 
        }
 }
 </script>
 </body>
+
+<div class="container">
+    <img id="img1" src="Img_Kochi.jpeg" height="100" width="100" onclick="selectImage()">
+</div>
+<script>
+var useImage = 1;
+function selectImage(){
+    switch(useImage){
+        case 1: document.getElementById('img1').src="Img_Kochi.jpeg";
+        useImage=2;
+        break;
+        case 2: document.getElementById('img1').src="Image_Kolkata.jpg";
+        useImage=3;
+        break;
+        case 3: document.getElementById('img1').src="Imge_Newcastle.jpeg";
+        useImage=1;
+        break;
+    }
+}
+
+</script>
 </html> 
